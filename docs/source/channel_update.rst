@@ -50,13 +50,13 @@ Now generate the default BYFN artifacts:
 
 .. code:: bash
 
-  ./byfn.sh -m generate
+  ./byfn.sh -m generate 
 
 And launch the network making use of the scripted execution within the CLI container:
 
 .. code:: bash
 
-  ./byfn.sh -m up
+  ./byfn.sh -m up 
 
 In another terminal, change into the ``org3-artifacts`` subdirectory.
 
@@ -126,8 +126,7 @@ variables.
 
   docker exec -it cli bash
 
-By default the CLI container exits after 10000 seconds.  If the container has
-exited, make sure to restart it before continuing.  First, check the status of
+By default the CLI container exits after 10 seconds. You should use the flag ``-t 10000`` to override the default CLI container exit time while using the ``./byfn.sh`` command, otherwise the CLI shall keep on exiting and you shall be stuck. If the container has exited, make sure to restart it before continuing.  First, check the status of
 your containers:
 
 .. code:: bash
